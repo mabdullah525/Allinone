@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="script.js">
+    <!-- CDN LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ALLINONE</title>
+    <!-- AOS LIBRARY -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #F2DEDF;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-pagination-bullet {
+            background: black;
+        }
+
+        .swiper-pagination {
+            position: static !important;
+            text-align: start !important;
+            transition: .3s opacity;
+            transform: translate3d(0, 0, 0);
+            z-index: 10;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <header class='bg-primary'>
+        <div class="lg:container flex lg:py-4 min-h-[70px] tracking-wide p-xs-1 sm-xs:px-xs-2 md:px-xs-4 sm:px-xs-2">
+            <div class="flex flex-wrap items-center justify-between gap-5 w-full">
+                <!-- Logo -->
+                <a><img src="assets/ALLINONE.png" class="w-36" /></a>
+
+                <!-- Navigation Menu -->
+                <ul id="menuItems"
+                    class="lg:flex gap-x-5 hidden max-lg:fixed max-lg:bg-white max-lg:w-full max-lg:h-full max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:space-y-6 max-lg:shadow-md max-lg:z-50">
+                    <li class="mb-6 hidden max-lg:block">
+                        <a><img src="assets/ALLINONE.png" class="w-32" /></a>
+                    </li>
+                    <li class="max-lg:py-3 px-3" id="#men"><a
+                            class=" relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center text-black font-semibold text-[16px]  cursor-pointer">
+                            MEN
+                        </a>
+                    </li>
+                    <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3"><a
+                            class="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center text-black font-semibold text-[16px]  cursor-pointer">
+                            WOMAN
+                        </a>
+                    </li>
+                    <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3"><a
+                            class="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center text-black font-semibold text-[16px]  cursor-pointer">
+                            KIDS
+                        </a>
+                    </li>
+                    <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3"><a
+                            class="relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center text-black font-semibold text-[16px]  cursor-pointer">
+                            COLLECTION
+                        </a>
+                    </li>
+                    <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3"><a
+                            class=" relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center text-black font-semibold text-[16px]  cursor-pointer">
+                            TRENDS
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Login Button -->
+                <div class="flex max-lg:ml-auto space-x-3">
+                    <button
+                        class="xs:hidden sm-xs:hidden sm:hidden lg:block md:hidden px-10 py-2 text-sm font-bold text-black border-2 border-black bg-primary transition-all ease-in-out duration-300 hover:bg-black hover:text-white">
+                        Login
+                    </button>
+                </div>
+
+                <!-- Menu Toggle Button (Visible on small screens) -->
+                <button id="nav-toggle" class="lg:hidden">
+                    <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Full-Screen Navigation Menu -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-primary bg-opacity-100 text-black  hidden z-50  flex-col items-center justify-start pt-28">
+                <ul class="flex flex-col items-center space-y-8 text-2xl font-[700] font-lato">
+                    <li><a href="#home" class="hover:text-yellow">MEN</a></li>
+                    <li><a href="#aboutus" class="hover:text-yellow">WOMEN</a></li>
+                    <li><a href="#product" class="hover:text-yellow">KIDS</a></li>
+                    <li><a href="#project" class="hover:text-yellow">COLLECTION</a></li>
+                    <li><a href="#services" class="hover:text-yellow">TREND</a></li>
+                </ul>
+                <button id="menu-close" class="absolute top-5 right-5 text-text focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-32 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute bottom-[30px] left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute bottom-[-129px] right-[5px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-[350px] right-[5px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+
+        <!-- HERO SECTION -->
+        <div class="lg:container pt-16 p-xs-1 sm-xs:px-xs-2 md:px-xs-4 sm:px-xs-2">
+            <div class="grid md:grid-cols-2 items-center md:gap-4 gap-8 font-frank">
+                <div class="max-md:order-1 max-md:text-center">
+                    <h1 data-aos="fade-right" data-aos-duration="1000"
+                        class="text-black font-frank font-[700] md:text-3xl lg:text-7xl md:leading-[3.5rem] xs:text-[35px] xs:font-[700] sm-xs:text-[44px] sm:text-[45px] md:text-[55px]">
+                        The Best Store To
+                        Shop Online All IN ONE</h1>
+                    <p data-aos="fade-left" data-aos-duration="1000"
+                        class="mt-4 font-[600] text-black lg:w-80 font-lato">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Proin egestas orci quis mi convallis Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Proin egestas orci quis mi convallis</p>
+                    <button
+                        class='animate-bounce text-lg mt-10 px-16 py-2 font-lato text-white border-2 border-black bg-black transition-all ease-in-out duration-300 hover:bg-transparent hover:text-black xs:w-full sm-xs:w-full'>Shop
+                        Now</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="1000"
+                    class="grid justify-items-end sm:justify-items-center relative">
+                    <img src="assets/hero-img.png" class="lg:w-[550px] lg:h-[590px] md:object-contain" />
+                    <!-- DOTS -->
+                    <div
+                        class="lg:grid lg:grid-cols-5 lg:gap-2 w-auto h-auto absolute top-8 right-[-20px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                    </div>
+                    <!-- DOTS -->
+                    <div
+                        class="lg:grid lg:grid-cols-5 lg:gap-2 w-auto h-auto absolute top-36 left-[-7px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                        <div class="bg-black w-2 h-2"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- underline -->
+            <div class="py-10">
+                <img src="assets/hero-line.png" alt="">
+            </div>
+
+        </div>
+    </header>
+
+    <script>
+        // JavaScript for toggling the mobile menu
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+
+
+    <!-- NEW COLLECTION -->
+    <section class="relative">
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-80 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <div class="lg:container p-xs-1 sm-xs:px-xs-2 md:px-xs-4 text-center mx-auto py-10 ">
+            <h1 data-aos="fade-up" data-aos-duration="1000"
+                class="font-frank font-[900] lg:text-6xl xs:text-[35px] sm-xs:text-[44px] md:text-[55px] sm:text-[45px]">
+                New Collection</h1>
+            <p class="font-lato text-[18px] mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas
+                orci quis mi convallis</p>
+
+            <!-- cards section -->
+            <div class="grid lg:grid-cols-3 gap-5 md:grid-cols-2 mt-10 justify-center">
+                <div data-aos="zoom-in" data-aos-duration="1000" class="drop-shadow-custom relative "><img
+                        src="assets/collection-1.png" class="lg:w-[376px] lg:h-[400px] opacity-[80%]">
+                    <div
+                        class="flex justify-center items-center w-80 h-14 bg-card-box text-black text-3xl uppercase font-frank font-[900] absolute bottom-5 left-6  xs:w-[86%]">
+                        Sweater</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="1000" class="drop-shadow-custom"><img
+                        src="assets/collection-2.png" class="lg:w-[376px] lg:h-[400px] opacity-[80%]">
+                    <div
+                        class="flex justify-center items-center w-80 h-14 bg-card-box text-black text-3xl uppercase font-frank font-[900] absolute bottom-5 left-6 xs:left-[21px] xs:w-[86%]">
+                        Sweater</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="1000" class="drop-shadow-custom"><img
+                        src="assets/collection-3.png" class="lg:w-[376px] lg:h-[400px] opacity-[80%]">
+                    <div
+                        class="flex justify-center items-center w-80 h-14 bg-card-box text-black text-3xl uppercase font-frank font-[900] absolute bottom-5 left-6 xs:left-[21px] xs:w-[86%]">
+                        Sweater</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELL since -->
+    <section class="relative">
+        <div class="lg:container xs:px-xs-1 sm-xs:px-xs-2 sm:px-xs-2 md:px-xs-4 pt-16 relative">
+            <div class="grid md:grid-cols-2 items-start md:gap-4 lg:gap-8 font-frank">
+                <div class="max-md:order-2 order-2 max-md:text-center mt-9">
+                    <h3 data-aos="fade-right" data-aos-duration="1000"
+                        class="text-black font-frank font-[700] md:text-3xl lg:text-7xl md:leading-10 lg:w-[360px] xs:text-[35px] sm-xs:text-[44px] md:text-[55px] sm:text-[45px]">
+                        Best
+                        Sell
+                        Since 2021</h3>
+                    <p data-aos="fade-left" data-aos-duration="1000"
+                        class="lg:mt-4 md:mt-4 font-[600] text-black lg:w-[25rem] font-lato">Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipiscing elit. Proin egestas orci quis mi convallis, vitae vulputate velit gravida. Sed
+                        molestie libero ut lectus accumsan aliquet. Praesent a orci at ante feugiat suscipit. Maecenas
+                        orci mi, finibus et viverra sit amet, consequat quis libero. Maecenas magna nibh, tempor non
+                        pretium id,</p>
+
+
+                    <!-- stat section -->
+                    <div
+                        class="sm:mt-5 sm-xs:mt-5 bg-secondary p-xs-1 lg:p-8 lg:px-2 flex flex-col items-center justify-center font-frank font-[900] absolute lg:right-[210px] md:right-[35px] lg:bottom-0 xs:static sm-xs:static">
+                        <div
+                            class="grid lg:grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6 xs:gap-14 sm-xs:gap-14 max-lg:gap-12">
+                            <div class="text-center">
+                                <h3 class="text-black text-4xl font-extrabold">2019</h3>
+                                <p class="mt-1 font-[500] text-2xl">All Founded</p>
+                            </div>
+
+                            <div class="text-center lg:border-l lg:border-r border-black px-4">
+                                <div class="w-[1px] h-[1px] bg-black"></div>
+                                <h3 class="text-black text-4xl font-extrabold">9090+</h3>
+                                <p class="font-[500] text-2xl mt-1">Product Sold</p>
+                            </div>
+
+                            <div class="text-center">
+                                <h3 class="text-black text-4xl font-extrabold">2019</h3>
+                                <p class="font-[500] text-2xl mt-1">Best Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="1000"
+                    class="grid justify-items-end xs:justify-start sm-xs:justify-start sm:justify-start">
+                    <img src="assets/best sell.png" class="xs:w-[310px]">
+                </div>
+            </div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute bottom-28 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-28 right-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute bottom-[-6rem] right-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+
+    </section>
+
+    <!-- BEST SELL PRODUCTS -->
+    <section class="bg-primary mt-40 xs:mt-10 relative xs-1">
+        <div
+            class="lg:pl-24 lg:py-12 xs:py-5 md:py-9 flex flex-col lg:flex-row sm-xs:flex-col xs:px-xs-1 sm-xs:px-xs-2 sm:px-xs-2 md:px-xs-4">
+            <!-- text -->
+            <div>
+                <h3 data-aos="fade-right" data-aos-duration="1000"
+                    class="text-black font-frank font-[700] md:text-3xl lg:text-7xl md:leading-10 lg:w-[360px] xs:text-[35px] sm-xs:text-[44px] sm:text-[45px] md:text-[55px]">
+                    Best Seller
+                    Product</h3>
+                <p data-aos="fade-left" data-aos-duration="1000"
+                    class="mt-4 font-[600] text-black lg:w-[25rem] font-lato">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Proin egestas orci quis mi convallis, vitae vulputate</p>
+                <button
+                    class='text-sm mt-10 px-9 py-2 font-lato text-black border-2 border-black bg-transparent transition-all ease-in-out duration-300 hover:bg-black hover:text-white font-[700]'>See
+                    More</button>
+
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper xs:mt-8 sm-xs:mt-9 sm:mt-5 md:mt-9 lg:mt-0">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-1.png" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-2.png" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-3.jpeg" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-1.png" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-2.png" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-3.jpeg" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-3.jpeg" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/swiper-3.jpeg" class="!h-[300px] !w-[375px] ">
+                            <div class="text-left bg-white p-3 font-frank">
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <i class="fa-solid fa-star text-sm"></i>
+                                <p class="text-black font-[900] text-[36px]">Watches</p>
+                                <div class="flex gap-5">
+                                    <p class="line-through text-[30px] text-dollar">220$</p>
+                                    <p class="text-black text-[30px]">140$</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination xs:flex xs:justify-center sm-xs:flex sm-xs:justify-center"></div>
+            </div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="grid grid-cols-3 gap-2 w-auto h-auto absolute top-16 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+
+    </section>
+
+
+    <!-- OUR PRODUCTS  SECTION -->
+    <section class="relative">
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute bottom-64 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-16 left-[2px] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+
+        <div class="lg:container sm-xs:px-xs-2 p-xs-1 sm:px-xs-2 md:px-xs-4 text-center py-10">
+            <h1 data-aos="fade-up" data-aos-duration="1000"
+                class="text-[62px] font-[900] font-frank xs:text-[35px] sm-xs:text-[44px]">Our Best Product</h1>
+
+            <div class="font-lato p-4">
+                <ul class="flex flex-wrap justify-center gap-8">
+                    <li id="homeTab"
+                        class="tab relative !bg-white  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center !text-black active:text-black font-semibold text-[16px]  cursor-pointer">
+                        MEN
+                    </li>
+                    <li id="contentTab"
+                        class="tab relative !bg-white  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center !text-black font-semibold text-[16px]  cursor-pointer">
+                        WOMEN
+                    </li>
+                    <li id="profileTab"
+                        class="tab relative !bg-white  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center !text-black font-semibold text-[16px]  cursor-pointer">
+                        KIDS
+                    </li>
+                    <li id="collectionTab"
+                        class="tab relative !bg-white  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center !text-black font-semibold text-[16px]  cursor-pointer">
+                        COLLECTION
+                    </li>
+                    <li id="trendsTab"
+                        class="tab relative !bg-white  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center !text-black font-semibold text-[16px]  cursor-pointer">
+                        TRENDS
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- MEN -->
+        <div id="homeContent" class="tab-content block mt-8">
+
+            <!-- IMAGES SECTION -->
+            <div class="container">
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center md:justify-around sm:justify-around lg:justify-between  sm-xs:gap-4">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men.webp"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="1500">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men-3.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men-7.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2500">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men-6.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center sm-xs:gap-4 sm:justify-around md:justify-around lg:justify-between mt-8">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men-.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="1500">
+                        <div class="w-[275px] h-[300px]"><img src="assets/man-5608277_640.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men-3.jpg"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2500">
+                        <div class="w-[275px] h-[300px]"><img src="assets/men.webp"
+                                class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Jackets & shirts</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- WOMEN -->
+        <div id="contentContent" class="tab-content hidden mt-8">
+            <!-- IMAGES SECTION -->
+            <div class="container">
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center md:justify-around sm:justify-around lg:justify-between  sm-xs:gap-4">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="assets/product-1.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <img src="assets/product-2.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <img src="assets/product-3.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-4.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center sm-xs:gap-4 sm:justify-around md:justify-around lg:justify-between mt-8">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="assets/product-5.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <img src="assets/product-6.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <img src="assets/product-7.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-8.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- KIDS -->
+        <div id="profileContent" class="tab-content  hidden mt-8">!
+            <div class="container">
+                <!-- IMAGES SECTION -->
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center md:justify-around sm:justify-around lg:justify-between  sm-xs:gap-4">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <div class="w-[275px] h-[300px] "><img src="assets/kid-6620283_1280.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/girl-6174060_1280.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/model-8422891_1280.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-4.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center sm-xs:gap-4 sm:justify-around md:justify-around lg:justify-between mt-8">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/photorealistic-portrait-young-people-with-braids_23-2151570188.avif"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/two-children-wearing-pants-shirt-that-says-boy-is-wearing_1276068-11692.avif"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/5552cc28e2d453359f8354d94b9efaea.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Shoes & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/136319e9c069aa1d3df349c36b00abe0.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COLLECTION -->
+        <div id="collectionContent" class="tab-content  hidden mt-8">
+            <div class="container">
+                <!-- IMAGES SECTION -->
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center md:justify-around sm:justify-around lg:justify-between  sm-xs:gap-4">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="assets/product-1.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <img src="assets/product-2.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <img src="assets/product-3.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-4.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center sm-xs:gap-4 sm:justify-around md:justify-around lg:justify-between mt-8">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="assets/product-5.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <img src="assets/product-6.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <img src="assets/product-7.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-8.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TRENDS -->
+        <div id="trendsContent" class="tab-content  hidden mt-8">
+            <div class="container">
+                <!-- IMAGES SECTION -->
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center md:justify-around sm:justify-around lg:justify-between  sm-xs:gap-4">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/trend-2.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/trend.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/trend-5.jpg"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <div class="w-[275px] h-[300px]"><img src="assets/trend-4.webp"
+                            class="w-full h-full object-cover"></div>
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-wrap xs:justify-center sm-xs:justify-center sm-xs:gap-4 sm:justify-around md:justify-around lg:justify-between mt-8">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="assets/product-5.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="2000">
+                        <img src="assets/product-6.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="3000">
+                        <img src="assets/product-7.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" data-aos-duration="4000">
+                        <img src="assets/product-8.png" alt="">
+                        <div class="text-center p-3 font-frank">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <p class="text-black font-[900] text-[24px]">Watches & clothes</p>
+                            <div class="flex justify-center gap-5">
+                                <p class="line-through text-[30px] text-dollar">220$</p>
+                                <p class="text-black text-[30px]">140$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let tabs = document.querySelectorAll('.tab');
+            let contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function (e) {
+                    let targetId = tab.id.replace('Tab', 'Content');
+
+                    // Hide all content divs
+                    contents.forEach(function (content) {
+                        content.classList.add('hidden');
+                    });
+
+                    // Remove active class from all tabs
+                    tabs.forEach(function (tab) {
+                        tab.classList.remove('text-blue-600', 'font-bold', 'bg-gray-50', 'border-blue-600');
+                        tab.classList.add('text-gray-600', 'font-semibold');
+                    });
+
+                    // Show the target content
+                    document.getElementById(targetId).classList.remove('hidden');
+
+                    // Add active class to the clicked tab
+                    tab.classList.add('text-blue-600', 'font-bold', 'bg-gray-50', 'border-blue-600');
+                    tab.classList.remove('text-gray-600', 'font-semibold');
+                });
+            });
+        });
+    </script>
+
+
+    <!-- SELL OF THE DAY -->
+
+    <section class="relative bg-primary mt-10">
+        <div
+            class="flex flex-col-reverse lg:flex-row justify-between lg:px-36 lg:pt-16 p-xs-1 sm:px-xs-2 sm-xs:px-xs-2 md:px-xs-4">
+            <div class="md:mt-5">
+
+                <h3 data-aos="fade-right" data-aos-duration="1000"
+                    class="text-black font-frank font-[700] md:text-3xl lg:text-7xl md:leading-10 lg:w-[480px] xs:text-[35px] xs:mt-5 sm-xs:mt-5 sm-xs:text-[44px] md:text-[55px] sm:text-[45px]">
+                    Sell of the
+                    Day</h3>
+                <p data-aos="fade-left" data-aos-duration="1000"
+                    class="mt-4 font-[600] text-black lg:w-[316px] text-justify font-lato">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Proin egestas orci quis mi convallis, vitae vulputate</p>
+
+                <!-- countdown box -->
+                <div class="mt-7 font-lato font-[900] flex gap-7 xs:gap-3 items-center p-6 px-0">
+                    <div class="w-[100px] h-[100px] bg-white items-center flex flex-wrap justify-center flex-col">
+                        <p class="text-[30px]">08</p>
+                        <p class="text-[18px] font-[600]">DAY</p>
+                    </div>
+                    <div class="w-[100px] h-[100px] bg-white items-center flex justify-center flex-col">
+                        <p class="text-[30px]">23</p>
+                        <p class="text-[18px] font-[600]">Hour</p>
+                    </div>
+                    <div class="w-[100px] h-[100px] bg-white items-center flex justify-center flex-col">
+                        <p class="text-[30px]">12</p>
+                        <p class="text-[18px] font-[600]">Minute</p>
+                    </div>
+                </div>
+                <button
+                    class='animate-bounce text-sm mt-10 px-10 py-3 font-lato text-white border-2 border-black bg-black transition-all ease-in-out duration-300 hover:bg-transparent hover:text-black font-[700] xs:w-full sm-xs:w-full'>Shop
+                    Now</button>
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="1000" class="relative">
+                <img src="assets/sell day.png" class="lg:w-[418px] lg:h-[477px]">
+                <!-- DOTS -->
+                <div
+                    class="lg:grid lg:grid-cols-5 lg:gap-2 w-auto h-auto absolute sm:hidden md:hidden top-20 right-[-40px] xs:hidden sm-xs:hidden">
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                </div>
+                <!-- DOTS -->
+                <div
+                    class="lg:grid lg:grid-cols-5 lg:gap-2 w-auto h-auto absolute sm:hidden md:hidden bottom-12 left-[-42px] xs:hidden sm-xs:hidden">
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                    <div class="bg-black w-2 h-2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute sm:hidden md:hidden bottom-64 left-[2px] xs:hidden sm-xs:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute sm:hidden md:hidden top-[-32px] right-[2px] xs:hidden sm-xs:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="mt-20 relative">
+        <div class="lg:container p-xs-1 sm-xs:px-xs-2 md:px-xs-4 sm:px-xs-2 text-center font-frank ">
+            <h1 data-aos="fade-right" data-aos-duration="1000"
+                class="text-[55px] font-[900] xs:text-[35px] sm-xs:text-[44px] sm:text-[45px]">What People Say About Us
+            </h1>
+            <p class="font-lato text-lg leading-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                egestas orci quis mi convallis orci quis mi convallis</p>
+
+        </div>
+        <div class="swiper mySwiper mt-10 md:px-xs-4">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-primary sm-xs:px-xs-2 lg:p-7 p-xs-1 font-lato text-center">
+                        <h1 class="font-[700] text-3xl lg:w-[464px]">Your Products are realy good! your Delivery speed
+                            is
+                            awesome</h1>
+                        <p class="text-left mt-5 font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed feugiat dui et lorem porttitor suscipit. Fusce pretium orci ipsum, quis interdum ante
+                            maximus sit amet. Pellentesque sagittis leo leo, sed pulvinar lectus interdum vel.</p>
+
+                        <!-- img sec -->
+                        <div class="flex justify-center items-center flex-col mt-10">
+                            <img src="assets/testi.png" class="!w-[120px] !h-[120px]">
+                            <h1 class="mt-3 font-[900] text-[22px]">Malika</h1>
+                            <p class="font-[500] text-[24px]">Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOTS SECTION -->
+        <div
+            class="lg:grid lg:grid-cols-3 lg:gap-2 w-auto h-auto absolute top-28 left-[2px] z-[1] xs:hidden sm-xs:hidden sm:hidden md:hidden">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div>
+        <!-- DOTS SECTION -->
+        <!-- <div class="grid grid-cols-3 gap-2 w-auto h-auto absolute bottom-[-3rem] right-[2px] z-[1]">
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+            <div class="bg-black w-2 h-2"></div>
+        </div> -->
+    </section>
+
+    <!-- logo  section -->
+    <section
+        class="flex xs:flex-col sm-xs:flex-col sm-xs:px-xs-2 sm:flex-col md:flex-row lg:flex-row pt-28 xs:justify-center sm-xs:justify-center items-center">
+        <div>
+            <img src="assets/footer-1.png" alt="">
+        </div>
+        <div>
+            <img src="assets/footer-2.png" alt="">
+        </div>
+        <div>
+            <img src="assets/footer-5.png" alt="">
+        </div>
+        <div>
+            <img src="assets/footer-4.png" alt="">
+        </div>
+        <div>
+            <img src="assets/footer-5.png" alt="">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black relative">
+        <div class="container font-lato lg:pt-28 xs:px-1 sm-xs:px-xs-2">
+
+            <div data-aos="flip-left" data-aos-duration="1000"
+                class="lg:w-[578px] sm-xs:w-[70%] h-32 xs:h-24 md:h-[40%] md:bottom-[155px] sm:bottom-[150px] md:left-[247px] sm:left-[197px] bg-white flex justify-center items-center text-center absolute lg:top-[-50px] lg:left-[23.25rem] xs:right-9 xs:top-[-50px] xs:w-[80%] sm-xs:bottom-[215px] md:w-[40%] sm:w-[40%]">
+                <h1 class="text-black text-[22px] font-lato font-[700] xs:text-[17px] ">Follow us on instagram
+                    @__samiullah_bayat__</h1>
+
+            </div>
+
+            <nav class="p-6 xs:pt-20 sm-xs:pt-32 md:pt-[100px] sm:pt-[100px]">
+                <ul class="flex justify-center items-center flex-wrap gap-5 space-x-4">
+                    <li>
+                        <a href="#home"
+                            class="font-lato text-white font-[700] relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-cente text-[16px]  cursor-pointer py-2  ">
+                            MEN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services"
+                            class="font-lato text-white font-[700] relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-cente text-[16px]  cursor-pointer py-2">
+                            WOMEN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="font-lato text-white font-[700] relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-cente text-[16px]  cursor-pointer py-2">
+                            KIDS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="font-lato text-white font-[700] relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-cente text-[16px]  cursor-pointer py-2">
+                            COLLECTION
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="font-lato text-white font-[700] relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-cente text-[16px]  cursor-pointer py-2">
+                            TRENDS
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="text-center text-white font-[700] py-5">
+                Copyright Abdullah All Right Reserved
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS lirary -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+
+    <!-- <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
+    //   autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+    //   },
+      breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 30,
+                },
+            },
+      
+    });
+  </script> -->
+
+</body>
+
+</html>
