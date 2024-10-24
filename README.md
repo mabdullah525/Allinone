@@ -1,7 +1,7 @@
 ## 🚀 About this project
- This is the Nexcent website template.
+ This is the Allinone website template.
 
-* Only html css bootstrap and little scss use in this project
+* Only html css Tailwind and little bit java-script use in this project
 
 
 ## How to download ?
